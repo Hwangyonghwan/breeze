@@ -18,25 +18,26 @@ public class search {
 		
 		for(int i=0; i < 1000; ++i)
 			arr[i] = i+1;
-			
-		
+	    
 		int first = 0;
-		int last = arr.length;
+		int last = arr.length-1;
 		int middle = (first + last) / 2;
 		
-		while(true)
+		while(first != last)
 		{
 			middle = (first + last) / 2;
 
 			if(num == arr[middle])
 				break;
 			else if(num > arr[middle])
-				first = middle;
+				first = middle+1;
 			else if(num < arr[middle])
-				last = middle;
+				last = middle-1;
 		}
-		
-		System.out.println(middle);
+		if(first == last)
+			System.out.println("No Number");
+		else
+			System.out.println(middle);
 		
 		
 		return middle;
